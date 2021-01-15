@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_tiny">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/newFeedAvatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="@dimen/margin_tiny"
+        android:scaleType="centerCrop"
+        android:src="@drawable/no_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_tiny"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/newFeedAvatar"
+        app:layout_constraintTop_toTopOf="@+id/newFeedAvatar">
+
+        <LinearLayout
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_gray_12"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/newFeedAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.skyhope.showmoretextview.ShowMoreTextView
+                android:id="@+id/newFeedContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sợ em biết, lại sợ em không biết. Muốn em biết lại muốn em không biết. Mà em biết thêm lại sợ em không biết. Muốn em biết nhưng lại không biết."
+                app:layout_constraintEnd_toEndOf="parent" />
+        </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/newFeedImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/content_layout"
+            app:layout_constraintTop_toBottomOf="@+id/content_layout" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/margin_tiny"
+            android:paddingBottom="@dimen/margin_small"
+            android:text="Yesterday 22:00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newFeedImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/margin_tiny"
+            android:paddingBottom="@dimen/margin_small"
+            android:text="Reply"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/newFeedImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/margin_tiny"
+            android:paddingBottom="@dimen/margin_small"
+            android:text="Like"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:background="@drawable/bg_rounded_white_10"
+            android:drawableEnd="@drawable/ic_like"
+            android:drawablePadding="@dimen/margin_tiny"
+            android:elevation="5dp"
+            android:paddingStart="@dimen/margin_tiny"
+            android:paddingEnd="@dimen/margin_tiny"
+            android:text="18"
+            app:layout_constraintBottom_toBottomOf="@+id/content_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/content_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

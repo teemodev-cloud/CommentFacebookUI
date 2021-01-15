@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_tiny">5dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_normal">15dp</dimen>
+    <dimen name="margin_big">20dp</dimen>
+    <dimen name="margin_large">25dp</dimen>
+    <dimen name="drawable_padding">5dp</dimen>
+    <dimen name="border_radius_label">8dp</dimen>
+    <dimen name="border_radius_normal">10dp</dimen>
+    <dimen name="border_radius_package">8dp</dimen>
+    <dimen name="dialog_width">270dp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_title">16sp</dimen>
+    <dimen name="text_size_content">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="line_normal">0.2dp</dimen>
+    <dimen name="dialog_corner_radius">10dp</dimen>
+    <dimen name="dialog_bottom_sheet_radius">16dp</dimen>
+    <item name="aspect_banner" format="float" type="dimen">3.45</item>
+</resources>

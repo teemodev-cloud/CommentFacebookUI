@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/comment_box" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/comment_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="5dp"
+        android:padding="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tag_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/margin_tiny"
+            android:paddingEnd="@dimen/margin_tiny"
+            android:paddingBottom="@dimen/margin_tiny"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatEditText"
+            app:layout_constraintStart_toEndOf="@+id/newFeedAvatar"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tag_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đang trả lời Hòa Lê"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tag_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:paddingStart="@dimen/margin_normal"
+                android:paddingEnd="@dimen/margin_normal"
+                android:text="Hủy"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/tag_description"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/newFeedAvatar"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="@dimen/margin_tiny"
+            android:scaleType="centerCrop"
+            android:src="@drawable/no_avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tag_layout"
+            app:riv_oval="true" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/appCompatEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/newFeedAvatar"
+            android:background="@drawable/bg_rounded_gray_18"
+            android:hint="Viết phản hồi..."
+            android:padding="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            app:layout_constraintBottom_toBottomOf="@+id/newFeedAvatar"
+            app:layout_constraintEnd_toStartOf="@+id/btn_send"
+            app:layout_constraintStart_toEndOf="@+id/newFeedAvatar"
+            app:layout_constraintTop_toTopOf="@+id/newFeedAvatar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_send"
+            android:padding="@dimen/margin_tiny"
+            app:layout_constraintBottom_toBottomOf="@+id/newFeedAvatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newFeedAvatar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>
