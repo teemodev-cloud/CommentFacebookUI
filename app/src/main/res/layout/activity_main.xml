@@ -28,7 +28,7 @@
             android:paddingStart="@dimen/margin_tiny"
             android:paddingEnd="@dimen/margin_tiny"
             android:paddingBottom="@dimen/margin_tiny"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/newFeedAvatar"
             app:layout_constraintTop_toTopOf="parent">
