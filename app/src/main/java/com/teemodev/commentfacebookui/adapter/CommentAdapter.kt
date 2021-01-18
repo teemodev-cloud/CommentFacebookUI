@@ -1,7 +1,6 @@
 package com.teemodev.commentfacebookui.adapter
 
 import Comments
-import Replies
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -77,7 +76,7 @@ class CommentAdapter(private val commentNavigator: CommentNavigator, private val
                 holder.bind(itemsGroup.replies[position - 2])
             }
             is CommentAdapterVH.LoadMoreVH -> {
-                holder.bind(itemsGroup.comment, commentNavigator)
+                holder.bind(itemsGroup.index, itemsGroup.comment, commentNavigator)
             }
             is CommentAdapterVH.CommentBoxVH -> {
                 holder.bind(itemsGroup.comment, commentNavigator)
@@ -96,7 +95,7 @@ class CommentAdapter(private val commentNavigator: CommentNavigator, private val
         }
 
         class ReplyVH(itemView: View) : CommentAdapterVH(itemView) {
-            fun bind(replies: Replies) {
+            fun bind(replies: Comments) {
                 itemView.apply {
                     itemView.newFeedAuthor.text = replies.user.fullname
                     itemView.newFeedContent.text = replies.content
@@ -105,10 +104,10 @@ class CommentAdapter(private val commentNavigator: CommentNavigator, private val
         }
 
         class LoadMoreVH(itemView: View) : CommentAdapterVH(itemView) {
-            fun bind(comment: Comments, commentNavigator: CommentNavigator) {
+            fun bind(position: Int, comment: Comments, commentNavigator: CommentNavigator) {
                 itemView.apply {
                     itemView.load_more.setOnClickListener {
-                        commentNavigator.onCommentLoadMoreClicked(comment)
+                        commentNavigator.onCommentLoadMoreClicked(position, comment)
                     }
                 }
             }

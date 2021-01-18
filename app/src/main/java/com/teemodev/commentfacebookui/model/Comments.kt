@@ -7,7 +7,7 @@ data class Comments (
 	@SerializedName("content_id") val content_id : Int,
 	@SerializedName("content_type") val content_type : String,
 	@SerializedName("user") val user : User,
-	@SerializedName("replies") val replies : List<Replies>,
+	@SerializedName("replies") val replies : List<Comments>,
 	@SerializedName("replies_count") val replies_count : Int,
 	@SerializedName("likes_count") val likes_count : Int,
 	@SerializedName("is_liked") val is_liked : Boolean,

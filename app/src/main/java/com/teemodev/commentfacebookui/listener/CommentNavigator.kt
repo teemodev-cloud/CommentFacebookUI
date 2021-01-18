@@ -6,5 +6,5 @@ interface CommentNavigator {
 
     fun onCommentBoxClicked(comments: Comments)
 
-    fun onCommentLoadMoreClicked(comments: Comments)
+    fun onCommentLoadMoreClicked(position: Int, comments: Comments)
 }
